@@ -1,0 +1,36 @@
+﻿@using Locaris_LJKDev_Asp.Net_MVC_Study.Models
+@model Locaris_LJKDev_Asp.Net_MVC_Study.Models.Person
+@{
+    ViewBag.Title = "HtmlTest";
+}
+
+<h2>MVC 行为详解</h2>
+@ViewData["LJK"]
+<hr />
+@ViewData["Junke"]
+<hr />
+@ViewBag.Junke
+<hr />
+@using (Html.BeginForm("HtmlTest", "LJK"))
+{
+    @Html.TextBox("LJK") @*自动装配*@
+    <hr />
+    <input type="submit" />
+    <hr />
+    @Html.DropDownList("LJKList")
+    <hr />
+    using (Html.BeginForm("Index", "LJK", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x => x.QQ) //重点
+    }
+    <hr />
+    Person person02 = new Person();
+    person02.Say("15");//不是被定义在原始类中，是被扩展进去的，想要该类由此方法，但有修改不了原始方法
+    @person02.Age;
+    <hr/>
+    @Model.QQ<hr/>
+    @Model.Age <hr/>
+    <input id="Button1" type="button" value="button" />
+    <input id="Password1" type="password" />
+}
+

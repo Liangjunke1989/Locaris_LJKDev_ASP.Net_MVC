@@ -16,7 +16,7 @@ namespace Locaris_LJKDev_Asp.Net_MVC_Study
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "LJK", action = "LjkAction", id = UrlParameter.Optional }
+                defaults: new { controller = "LJK", action = "HtmlTest", id = UrlParameter.Optional }
             );
         }
     }
