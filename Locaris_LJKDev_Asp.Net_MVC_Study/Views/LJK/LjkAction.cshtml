@@ -1,8 +1,18 @@
 ﻿
 @{
     ViewBag.Title = "LjkAction";
-}
+}     
 
 <h2>LjkAction测试</h2>
 @Html.TextBox("userName")
+<hr />
+@*@Html.ActionLink("添加","Add","Hello")//超链接*@
+<a href="@Url.Action("Add","Hello")?id=1">添加</a>    @*get方式传送数据*@
+<hr/>
+<hr />
+@using (Html.BeginForm("Add", "Hello", FormMethod.Post))
+{
+    @Html.TextBox("txtId")<br/>   //形参与此TextBox“键”的名字要一致
+    <input type="submit" value="提交"/>
+}
 

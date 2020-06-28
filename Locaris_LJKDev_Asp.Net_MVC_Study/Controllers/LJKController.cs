@@ -53,5 +53,13 @@ namespace Locaris_LJKDev_Asp.Net_MVC_Study.Controllers
             };
             return View();
         }
+        
+
+        [System.Web.Http.HttpPost]
+        public ActionResult Add(int txtId)
+        {
+            ViewBag.Id2 = txtId;
+            return View();
+        }
     }
 }
