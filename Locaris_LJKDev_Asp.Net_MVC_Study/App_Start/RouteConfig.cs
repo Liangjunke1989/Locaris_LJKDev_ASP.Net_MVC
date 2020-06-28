@@ -8,7 +8,7 @@ using System.Web.Routing;
 namespace Locaris_LJKDev_Asp.Net_MVC_Study
 {
     public class RouteConfig
-    {
+    { 
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -16,7 +16,7 @@ namespace Locaris_LJKDev_Asp.Net_MVC_Study
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "LJK", action = "LjkAction", id = UrlParameter.Optional }
             );
         }
     }
