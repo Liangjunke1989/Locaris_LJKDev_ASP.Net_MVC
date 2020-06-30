@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script>
+    $(function() {
+        $("#btnAdd").click(function() {
+            $.post(                                                  //异步
+                // "/LJK_Home/CalcAdd()"
+                "@Url.Action("CalcAdd","LJK_Home")",
+                $("#form1").serialize(),
+                function(msg) {
+                    $("#sum").val(msg);
+                });
+        });
+    });
+
+    function Success(obj) {
+        $("#result").val(obj.Sum);
+    }
+
+     
+</script>
+<h2>Index</h2>
+<form id="form1">
+    <input type="text" name="calc1" />+
+    <input type="text" name="calc2" />
+    <input type="button" id="btnAdd" value="加" />
+    <input type="text" name="sum" id="sum" />
+</form>
+<hr />
+@using (Ajax.BeginForm("CalcAdd01", "LJK_Home", new AjaxOptions()     //封装过
+{
+    OnSuccess = "异步请求成功了！！",
+}))
+{
+    <input type="text" name="calc1"/>
+    <sapn>+</sapn>
+    <input type="text" name="calc2"/>
+    <input type="submit" value="="/>
+    <input type="text" id="result"/>                                     
+}

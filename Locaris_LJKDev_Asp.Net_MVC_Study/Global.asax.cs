@@ -17,6 +17,7 @@ namespace Locaris_LJKDev_Asp.Net_MVC_Study
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }

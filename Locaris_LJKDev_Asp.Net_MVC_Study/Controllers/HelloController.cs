@@ -30,7 +30,7 @@ namespace Locaris_LJKDev_Asp.Net_MVC_Study.Controllers
             return Json(person,JsonRequestBehavior.AllowGet);        //转成Json对象
         }
         //第一种方式：Request["键"]的方式接收参数
-        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.HttpGet]       //特性
         public ActionResult Add()
         {
             int id = int.Parse(Request["id"]);
@@ -40,10 +40,27 @@ namespace Locaris_LJKDev_Asp.Net_MVC_Study.Controllers
 
         //第二种方式：自动装配
         //如果要实现行为的重载，要满足两个条件：1.参数不同（签名不同）2.请求类型不同
-        [System.Web.Mvc.HttpPost]                 //自动装配
-        public ActionResult Add(int txtId)   
+        [System.Web.Mvc.HttpPost]      //特性           //自动装配
+        public ActionResult Add(int txtId)     //形参的名字要和提交表单中键的名字一致，才可以自动装配时获取到值
         {
             ViewBag.Id2 = txtId;
+            return View();
+        }
+
+        public ActionResult AddPerson()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddPerson(Person person)
+        {
+            ViewData.Model = person;
+            return View("AddPerson01");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            ViewBag.Id = id;
             return View();
         }
     }

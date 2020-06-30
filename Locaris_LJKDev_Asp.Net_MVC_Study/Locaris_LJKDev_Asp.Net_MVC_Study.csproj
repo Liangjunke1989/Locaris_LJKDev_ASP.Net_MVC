@@ -133,9 +133,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\LJK_MVC01\LJK_MVC01AreaRegistration.cs" />
     <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LJKController.cs" />
+    <Compile Include="Controllers\LJK_HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +157,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\LJK_MVC01\Views\web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -182,9 +187,18 @@
     <Content Include="Views\LJK\HtmlTest.cshtml" />
     <Content Include="Views\Hello\Add.cshtml" />
     <Content Include="Views\LJK\Add.cshtml" />
+    <Content Include="Views\Hello\AddPerson.cshtml" />
+    <Content Include="Views\Hello\AddPerson01.cshtml" />
+    <Content Include="Views\Hello\Edit.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\LJK_Home\Index.cshtml" />
+    <Content Include="Views\Person\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\LJK_MVC01\Controllers\" />
+    <Folder Include="Areas\LJK_MVC01\Models\" />
+    <Folder Include="Areas\LJK_MVC01\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,16 @@
+﻿@model Locaris_LJKDev_Asp.Net_MVC_Study.Models.Person
+@{
+    ViewBag.Title = "AddPerson";
+}
+
+<h2>AddPerson</h2>
+@using (Html.BeginForm("AddPerson", "Hello", FormMethod.Post))
+{
+    <span>年龄：</span>
+    @Html.TextAreaFor(p=>p.Age);
+    <br/>
+    <span>QQ:</span>
+    @Html.TextAreaFor(p=>p.QQ);
+    <input type="submit" value="提交"/>
+}
+
